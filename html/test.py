@@ -1,4 +1,1 @@
 printf("Hello world")
-
-
-lol
