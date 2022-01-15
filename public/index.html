@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <meta http-equiv="x-ua-compatible" content="ie=edge" />
-  <title>Material Design for Bootstrap</title>
+  <title>Vacant.</title>
   <!-- MDB icon -->
   <link rel="icon" href="img/mdb-favicon.ico" type="image/x-icon" />
   <!-- Font Awesome -->
@@ -23,18 +23,19 @@
   <script src="scripts/moment.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 </head>
 
 <body style="background-color: rgb(248 250 252);">
   <!-- Start your project here-->
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark shadow sticky-top border-bottom border-light"
-    style="background-color:white;">
+  <nav class="navbar navbar-expand-lg navbar-dark shadow sticky-top" style="background-color:#101329;">
     <!-- Container wrapper -->
     <div class="container-fluid">
 
       <!-- Navbar brand -->
-      <a class="navbar-brand text-black"
+      <a class="navbar-brand text-white"
         style="font-family: 'Outfit', sans-serif; font-weight: 600; --mdb-text-opacity: .7;" href="#">Vacant.</a>
 
       <!-- Toggle button -->
@@ -68,8 +69,7 @@
             <span id="counter" class="justify-content-end">4 tables available.</span>
           </p>
 
-          <div class="container text-center">
-
+          <div class="container text-center" style="margin-bottom: 110px; margin-top: 110px;">
             <div class="row">
               <div class="col-sm" style="margin-bottom:50px;">
                 <span class="fw-bold fs-5">Table One</span>
@@ -121,8 +121,7 @@
                 </div>
               </div>
 
-
-              <div class="col-sm" style="margin-bottom:50px;">
+              <div class="col-sm">
                 <span class="fw-bold fs-5 ">Table Four</span>
                 <div>
                   <svg height="50" width="50">
@@ -150,7 +149,21 @@
               </div>
             </div>
 
+          </div>
 
+          <span class="fw-bold fs-6">Legend</span>
+          <div class="row">
+            <div class="col-sm d-flex align-items-center"><button type="button" class="btn btn-success"
+                style="width:5px; height:5px;"></button>
+              <span class="align-items-center" style="padding-left: 5px">- Vacant</span>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm d-flex align-items-center"><button type="button" class="btn btn-danger"
+                style="width:5px; height:5px;"></button>
+              <span class="align-items-center" style="padding-left: 5px">- Occupied</span>
+            </div>
           </div>
 
 
@@ -167,16 +180,35 @@
       <div class="card">
         <div class="card-body">
           <h5 class="card-title fs-2 fw-bold">Analysis</h5>
+
+
+
           <p class=" card-text d-flex justify-content-between align-items-center">
-            NTU Koufu
-            <span id="counter" class="justify-content-end">.</span>
+            Share of occupancy
+            <span id="counter" class="justify-content-end">
+              <div class="dropdown">
+                <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton"
+                  data-mdb-toggle="dropdown" aria-expanded="false">
+                  Time
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <li><a id="dataOne" class="dropdown-item">6AM-9AM</a></li>
+                  <li><a id="dataTwo" class="dropdown-item">9AM-12PM</a></li>
+                  <li><a id="dataThree" class="dropdown-item">12PM-2PM</a></li>
+                  <li><a id="dataFour" class="dropdown-item">2PM-5PM</a></li>
+                  <li><a id="dataFive" class="dropdown-item">5PM-8PM</a></li>
+                  <li><a id="dataSix" class="dropdown-item">8PM-10PM</a></li>
+                </ul>
+              </div>
+            </span>
           </p>
 
-          <div class="container text-center">
 
-
-
-
+          <div class="container text-center" style="position: relative; height:300px; width:300px; margin-bottom: 50px">
+            <div>
+              <span id="chartLabel">Breakfast (6AM-9AM)</span>
+              <canvas id="myChart"></canvas>
+            </div>
           </div>
 
 
@@ -212,6 +244,208 @@
   </script>
 
   <script src="scripts/vacantScript.js"></script>
+
+
+  <script>
+    const data1 = {
+      labels: [
+        'Table 1',
+        'Table 2',
+        'Table 3',
+        'Table 4'
+      ],
+      datasets: [{
+        label: 'My First Dataset',
+        data: [10, 12, 8, 60],
+        backgroundColor: [
+          'rgb(255, 99, 132)',
+          'rgb(54, 162, 235)',
+          'rgb(255, 205, 86)',
+          'rgb(41, 194, 46)'
+        ],
+        hoverOffset: 4
+      }]
+    };
+
+    const data2 = {
+      labels: [
+        'Table 1',
+        'Table 2',
+        'Table 3',
+        'Table 4'
+      ],
+      datasets: [{
+        label: 'My First Dataset',
+        data: [25, 15, 6, 4],
+        backgroundColor: [
+          'rgb(255, 99, 132)',
+          'rgb(54, 162, 235)',
+          'rgb(255, 205, 86)',
+          'rgb(41, 194, 46)'
+        ],
+        hoverOffset: 4
+      }]
+    };
+
+    const data3 = {
+      labels: [
+        'Table 1',
+        'Table 2',
+        'Table 3',
+        'Table 4'
+      ],
+      datasets: [{
+        label: 'My First Dataset',
+        data: [28, 34, 20, 18],
+        backgroundColor: [
+          'rgb(255, 99, 132)',
+          'rgb(54, 162, 235)',
+          'rgb(255, 205, 86)',
+          'rgb(41, 194, 46)'
+        ],
+        hoverOffset: 4
+      }]
+    };
+
+    const data4 = {
+      labels: [
+        'Table 1',
+        'Table 2',
+        'Table 3',
+        'Table 4'
+      ],
+      datasets: [{
+        label: 'My First Dataset',
+        data: [24, 51, 15, 10],
+        backgroundColor: [
+          'rgb(255, 99, 132)',
+          'rgb(54, 162, 235)',
+          'rgb(255, 205, 86)',
+          'rgb(41, 194, 46)'
+        ],
+        hoverOffset: 4
+      }]
+    };
+
+    const data5 = {
+      labels: [
+        'Table 1',
+        'Table 2',
+        'Table 3',
+        'Table 4'
+      ],
+      datasets: [{
+        label: 'My First Dataset',
+        data: [30, 22, 38, 10],
+        backgroundColor: [
+          'rgb(255, 99, 132)',
+          'rgb(54, 162, 235)',
+          'rgb(255, 205, 86)',
+          'rgb(41, 194, 46)'
+        ],
+        hoverOffset: 4
+      }]
+    };
+
+    const data6 = {
+      labels: [
+        'Table 1',
+        'Table 2',
+        'Table 3',
+        'Table 4'
+      ],
+      datasets: [{
+        label: 'My First Dataset',
+        data: [28, 34, 20, 18],
+        backgroundColor: [
+          'rgb(255, 99, 132)',
+          'rgb(54, 162, 235)',
+          'rgb(255, 205, 86)',
+          'rgb(41, 194, 46)'
+        ],
+        hoverOffset: 4
+      }]
+    };
+
+    var dataSelector = 0;
+
+    var dataType = [data1, data2, data3, data4, data5, data6];
+    var pieOne = document.getElementById('dataOne');
+    var pieTwo = document.getElementById('dataTwo');
+    var pieThree = document.getElementById('dataThree');
+    var pieFour = document.getElementById('dataFour');
+    var pieFive = document.getElementById('dataFive');
+    var pieSix = document.getElementById('dataSix');
+    var pieLabel = document.getElementById('chartLabel')
+
+    pieOne.addEventListener('click', event => {
+      dataSelector = 0;
+      pieLabel.innerHTML = "Breakfast (6AM-9AM)";
+      reRender();
+    });
+
+    pieTwo.addEventListener('click', event => {
+      dataSelector = 1;
+      pieLabel.innerHTML = "Brunch (9AM-12PM)";
+      reRender();
+    });
+
+    pieThree.addEventListener('click', event => {
+      dataSelector = 2;
+      pieLabel.innerHTML = "Lunch (12PM-2PM)";
+      reRender();
+    });
+
+    pieFour.addEventListener('click', event => {
+      dataSelector = 3;
+      pieLabel.innerHTML = "Teatime (2PM-5PM)";
+      reRender();
+    });
+
+    pieFive.addEventListener('click', event => {
+      dataSelector = 4;
+      pieLabel.innerHTML = "Dinner (5PM-8PM)";
+
+      reRender();
+    });
+
+    pieSix.addEventListener('click', event => {
+      dataSelector = 5;
+      pieLabel.innerHTML = "Supper (8PM-1030PM)";
+      reRender();
+    });
+
+    var config = {
+      type: 'doughnut',
+      data: dataType[dataSelector],
+    };
+
+
+    var myChart = new Chart(
+      document.getElementById('myChart'),
+      config
+    );
+
+    function reRender() {
+      myChart.destroy();
+
+      config = {
+        type: 'doughnut',
+        data: dataType[dataSelector],
+      };
+
+      myChart = new Chart(
+        document.getElementById('myChart'),
+        config
+      );
+
+
+    }
+
+
+
+  </script>
+
 
 
   <!-- MDB -->
