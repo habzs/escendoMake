@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Material Design for Bootstrap</title>
+    <!-- MDB icon -->
+    <link rel="icon" href="img/mdb-favicon.ico" type="image/x-icon" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" />
+    <!-- Google Fonts Roboto -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" />
+    <!-- MDB -->
+    <link rel="stylesheet" href="css/mdb.min.css" />
+
+    <script src="scripts/moment.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+</head>
+
+<body>
+    <!-- Start your project here-->
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark " style="background-color:#1D163D;">
+        <!-- Container wrapper -->
+        <div class="container-fluid">
+
+            <!-- Navbar brand -->
+            <a class="navbar-brand" href="#">Vacant</a>
+
+            <!-- Toggle button -->
+            <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
+                data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <!-- Collapsible wrapper -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                    <!-- Link -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+
+                </ul>
+
+            </div>
+        </div>
+        <!-- Container wrapper -->
+    </nav>
+
+    <div class="container-fluid" style="padding-top: 20px;">
+        <div>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Vacancies</h5>
+                    <p class="card-text d-flex justify-content-between align-items-center">
+                        NTU Koufu
+                        <span id="counter" class="justify-content-end">0 table occupied.</span>
+                    </p>
+
+                    <div class="container text-center">
+
+                        <div class="row">
+                            <div class="col-sm">
+                                <span class="fw-bold fs-5">Table One</span>
+                                <div>
+                                    <svg height="50" width="50">
+                                        <circle cx="25" cy="25" r="12.5" stroke="#4d4b54" stroke-width="5"
+                                            fill="none" />
+                                    </svg>
+                                </div>
+                                <button id="one" type="button" class="btn btn-outline-dark"
+                                    style="width:50px; height:50px;">
+                                </button>
+                                <div>
+                                    <svg height="50" width="50">
+                                        <circle cx="25" cy="25" r="12.5" stroke="#4d4b54" stroke-width="5"
+                                            fill="none" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="col-sm">
+                                <span class="fw-bold fs-5">Table Two</span>
+                                <div>
+                                    <div>
+                                        <svg height="50" width="50">
+                                            <circle cx="25" cy="25" r="12.5" stroke="#4d4b54" stroke-width="5"
+                                                fill="none" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <button id="two" type="button" class="btn btn-outline-dark"
+                                    style="width:50px; height:50px;">
+                                </button>
+                                <div>
+                                    <div>
+                                        <svg height="50" width="50">
+                                            <circle cx="25" cy="25" r="12.5" stroke="#4d4b54" stroke-width="5"
+                                                fill="none" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm">
+                                <span class="fw-bold fs-5">Table Three</span>
+                                <div>
+                                    <svg height="50" width="50">
+                                        <circle cx="25" cy="25" r="12.5" stroke="#4d4b54" stroke-width="5"
+                                            fill="none" />
+                                    </svg>
+                                </div>
+                                <button id="three" type="button" class="btn btn-outline-dark"
+                                    style="width:50px; height:50px;">
+                                </button>
+
+                                <div>
+                                    <svg height="50" width="50">
+                                        <circle cx="25" cy="25" r="12.5" stroke="#4d4b54" stroke-width="5"
+                                            fill="none" />
+                                    </svg>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+
+
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+
+
+
+    <!-- Navbar -->
+    <!-- End your project here-->
+
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyD2X-yBfawUzAuEv0Dk8mw3N4tpGoAJFv0",
+            authDomain: "escendotwo.firebaseapp.com",
+            databaseURL: "https://escendotwo-default-rtdb.firebaseio.com",
+            projectId: "escendotwo",
+            storageBucket: "escendotwo.appspot.com",
+            messagingSenderId: "373625997495",
+            appId: "1:373625997495:web:ddb6a6aecde59cb7266532",
+            measurementId: "G-54Y5ZYX5V7"
+        };
+
+        firebase.initializeApp(firebaseConfig);
+        var db = firebase.database();
+
+
+    </script>
+
+    <script src="scripts/vacantScript.js"></script>
+
+
+    <!-- MDB -->
+    <script type="text/javascript" src="js/mdb.min.js"></script>
+    <!-- Custom scripts -->
+    <script type="text/javascript"></script>
+</body>
+
+</html>
