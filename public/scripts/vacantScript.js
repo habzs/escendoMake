@@ -3,13 +3,14 @@ const rootRef = db.ref('vacant');
 var oneBox = document.getElementById("one");
 var twoBox = document.getElementById("two");
 var threeBox = document.getElementById("three");
+var fourBox = document.getElementById("four");
 var occupancySpan = document.getElementById("counter");
 
 var currentStateOne = 0
 var currentStateTwo = 0
 var currentStateThree = 0
 
-var occupancy = 0;
+var occupancy = 4;
 
 // function addData() {
 //     writeUserData();
@@ -51,7 +52,7 @@ rootRef.on('value', (snapshot) => {
 
 
 function updateColors(data) {
-    var occupancy = 0;
+    var occupancy = 4;
     var plural;
 
     if (data.one.status === 1) {
@@ -72,18 +73,23 @@ function updateColors(data) {
         threeBox.setAttribute("class", "btn btn-success");
     }
 
+    if (data.four.status === 1) {
+        fourBox.setAttribute("class", "btn btn-danger");
+    } else {
+        fourBox.setAttribute("class", "btn btn-success");
+    }
 
     for (key in data) {
         if (data[key].status === 1) {
-            occupancy++;
+            occupancy--;
         }
 
     }
 
     if (occupancy === 1) {
-        plural = "table occupied.";
+        plural = "table available.";
     } else {
-        plural = "tables occupied.";
+        plural = "tables available.";
     }
 
     occupancySpan.innerHTML = `${occupancy} ${plural}`
