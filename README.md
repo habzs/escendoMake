@@ -5,6 +5,9 @@
 
 > WARNING: Very, very messy code (crunch for the Makeathon), best to not refer from this repo. 
 
+
+![IMG_A0F2480BCEDA-1](https://user-images.githubusercontent.com/38891057/150741769-9559c910-c854-4413-a671-0db8986039a9.jpeg)
+
 A 3-day makeathon revolving around the theme: Smart Nation.
 
 Vacant is a smart tray system that allows users to see if tables are occupied. 
