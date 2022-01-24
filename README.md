@@ -15,6 +15,8 @@ This project makes use of:
 - Firebase
 - Node.js and Material Design Bootstrap
 
+Using an Arduino with an RFID sensor, it detects for a RFID tag, and communicates directly with Firebase through the ESP8266 to update the state of a "table". The web-app then listens for changes to the Firebase Realtime Database and makes appropriate changes to the UI.
+
 To start:
 ```
 - Compile and upload the sketch to an Arduino.
