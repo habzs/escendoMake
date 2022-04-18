@@ -1,9 +1,9 @@
-# escendoMake
+# Vacant: Escendo Makethon
 
 # ESCENDO 2022 Makeathon ::
 ## 3RD place.
 
-> WARNING: Very, very messy code (crunch for the Makeathon), best to not refer from this repo. 
+> WARNING: crunch for the Makeathon. 
 
 
 ![IMG_A0F2480BCEDA-1](https://user-images.githubusercontent.com/38891057/150741769-9559c910-c854-4413-a671-0db8986039a9.jpeg)
